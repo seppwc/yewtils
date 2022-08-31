@@ -1,5 +1,20 @@
-import { beforeEach, describe, expect, it, suite, vi } from 'vitest'
-import { EMPTY_ARR, EMPTY_OBJ, NO, NO_OP, hasChanged, invokeArrayFns, remove } from '../src/functions'
+import {
+  beforeEach,
+  describe,
+  expect,
+  it,
+  suite,
+  vi,
+} from 'vitest'
+import {
+  EMPTY_ARR,
+  EMPTY_OBJ,
+  NO,
+  NO_OP,
+  hasChanged,
+  invokeArrayFns,
+  remove,
+} from '../src/functions'
 
 const spy = vi.fn()
 

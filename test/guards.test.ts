@@ -1,7 +1,70 @@
-import { describe, expect, it, suite } from 'vitest'
-import { isDate, isFunction, isIntegerKey, isMap, isObject, isPlainObject, isPromise, isSet, isString, isSymbol } from '../src/assertions'
+import {
+  describe, expect, it, suite,
+} from 'vitest'
+import {
+  assert,
+  isDate,
+  isFunction,
+  isIntegerKey,
+  isMap,
+  isObject,
+  isPlainObject,
+  isPromise,
+  isSet,
+  isString,
+  isSymbol,
+  isTruthy,
+  noNull,
+  notNullish,
+  notUndefined,
+} from '../src/guards'
 
-suite('assertions', () => {
+suite('guards', () => {
+  describe('assert', () => {
+    it('should assert condition and throw if considition is false', () => {
+      function test() {
+        assert(false, 'test')
+      }
+      expect(test).toThrowError()
+    })
+
+    it('should assert condition and not throw if considition is true', () => {
+      function test() {
+        assert(true, 'test')
+      }
+      expect(test).not.toThrowError()
+    })
+  })
+
+  describe('noNull', () => {
+    it('should filter out null values', () => {
+      expect([null, 1, null, undefined].filter(noNull)).toHaveLength(2)
+    })
+  })
+
+  describe('notNullish', () => {
+    it('should filter out nullish values', () => {
+      expect([null, 1, null, undefined].filter(notNullish)).toHaveLength(1)
+    })
+  })
+
+  describe('notUndefined', () => {
+    it('should filter out undefined values', () => {
+      expect([null, 1, null, undefined].filter(notUndefined)).toHaveLength(3)
+    })
+  })
+  describe('isTruthy', () => {
+    it('should return whether value is thruthy', () => {
+      expect(isTruthy(0)).toBeFalsy()
+      expect(isTruthy('')).toBeFalsy()
+      expect([0, '', false].filter(isTruthy)).length(0)
+
+      expect(isTruthy(1)).toBeTruthy()
+      expect(isTruthy('hi')).toBeTruthy()
+      expect([2, 'asasd', true].filter(isTruthy)).length(3)
+    })
+  })
+
   describe('isDate', () => {
     it('assert if is Date', () => {
       expect(isDate(new Date())).toBeTruthy()

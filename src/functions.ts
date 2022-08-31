@@ -1,14 +1,23 @@
-import { isArray } from './assertions'
+import { isArray } from './guards'
 
 /**
  * an empty readonly object
  */
 export const EMPTY_OBJ: { readonly [key: string]: any } = Object.freeze({})
 
+export function emptyObject<T extends object>(): T {
+  return EMPTY_OBJ as T
+}
+
 /**
   * an empty readonly array
   */
+
 export const EMPTY_ARR: readonly any[] = Object.freeze([])
+
+export function emptyArray<T>(): T[] {
+  return EMPTY_ARR as T[]
+}
 
 /**
   * function that does nothing

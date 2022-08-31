@@ -1,5 +1,15 @@
-import { describe, expect, it, suite } from 'vitest'
-import { createHash, toCamelCase, toKebabCase, toPascalCase } from '../src'
+import {
+  describe,
+  expect,
+  it,
+  suite,
+} from 'vitest'
+import {
+  createHash,
+  toCamelCase,
+  toKebabCase,
+  toPascalCase,
+} from '../src'
 
 suite('strings', () => {
   /**

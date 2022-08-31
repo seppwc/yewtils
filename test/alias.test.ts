@@ -1,5 +1,12 @@
-import { describe, expect, it, suite } from 'vitest'
-import { defineProperty, extend, hasOwnProperty } from '../src'
+import {
+  describe,
+  expect,
+  it,
+  suite,
+} from 'vitest'
+import {
+  defineProperty, extend, hasOwnProperty,
+} from '../src'
 
 suite('aliases', () => {
   describe('defineProperty', () => {

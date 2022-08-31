@@ -1,5 +1,14 @@
-import { describe, expect, it, suite } from 'vitest'
-import { toNumber, toRawType, toTypeString } from '../src/converstion'
+import {
+  describe,
+  expect,
+  it,
+  suite,
+} from 'vitest'
+import {
+  toNumber,
+  toRawType,
+  toTypeString,
+} from '../src/converstion'
 
 suite('conversions', () => {
   describe('toNumber', () => {
