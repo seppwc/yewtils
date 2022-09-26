@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "target": "es2018",
-    "module": "esnext",
+    "module": "CommonJS",
     "lib": ["esnext"],
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "esModuleInterop": true,
     "strict": true,
     "strictNullChecks": true,
